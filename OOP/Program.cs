@@ -87,7 +87,7 @@
 // Structure task: value type data storage,
 // constructor overloading, formatted console output
 // -------------------------------------------------------
-//AppRunner.RunTypenschild();
+AppRunner.RunTypenschild();
 
 
 // ================= STRUCT + PROPERTY COPY ===========================
