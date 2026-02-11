@@ -1,12 +1,4 @@
 ﻿using Grundlagen.Grundlagen;
-using Grundlagen.OOP;
-using Grundlagen.OOP.Interfaces;
-using Grundlagen.OOP.Models;
-using Grundlagen.OOP.Models.Geschaeftsgebaeude;
-using Grundlagen.OOP.Models.Wohngebaeude;
-using Grundlagen.Services;
-
-
 
 Variablen.Run3();
 
@@ -37,75 +29,8 @@ Loops.ForeachLoop();
 Loops.WhileLoop();
 Loops.DoWhileLoop();
 
-CollectionClasses.ArrayListTasks();
+//CollectionClasses.ArrayListTasks();
 CollectionClasses.HashtableTasks();
-
-#region OOP
-// Wohngebaeude
-Gebaeude haus = new Einfamilienhaus(
-        gesamtnutzflaecheQm: 140,
-        gartenQm: 300,
-        miete: 1200,
-        einbaukueche: true
-    );
-
-    Gebaeude villa = new Villa(
-        gesamtnutzflaecheQm: 280,
-        gartenQm: 800,
-        miete: 3200,
-        einliegerwohnung: true
-    );
-
-    // Geschaeftsgebaeude
-    Gebaeude laden = new Laden(
-        gesamtnutzflaecheQm: 90,
-        pacht: 1500,
-        verkaufsflaecheQm: 70
-    );
-
-    Gebaeude restaurant = new Restaurant(
-        gesamtnutzflaecheQm: 200,
-        pacht: 2800,
-        anzahlTische: 25,
-        aussenbewirtschaftung: true
-    );
-
-    Gebaeude buero = new Buero(
-        gesamtnutzflaecheQm: 160,
-        pacht: 2100,
-        notstromversorgung: false
-    );
-
-    // Alle Objekte in einer gemeinsamen Liste
-    List<Gebaeude> gebaeudeListe = new()
-    {
-        haus,
-        villa,
-        laden,
-        restaurant,
-        buero
-    };
-
- //restaurant.IsPutzen();
-    // Polymorphe mit Abstract Classes
-    //foreach (var g in gebaeudeListe)
-    //{
-    //    Console.WriteLine("-------------");
-    //    g.Print();
-    //}
-
-     //Polymorphe mit Interfaces
-
-    var list = new List<IPrintable>
-    {
-        haus,
-        villa,
-        laden,
-        restaurant,
-        buero
-    };
-    //PrintHelper.PrintAll(list);
-#endregion
 
 #region Array
     // Array
