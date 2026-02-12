@@ -56,6 +56,8 @@
 
         public string USB { get; set; } = "nicht angeschlossen";
 
+        public string Gehaeuse { get; set; }
+
         /* =========================
            Constructors
         ========================= */
@@ -138,6 +140,16 @@
             Console.WriteLine(einschalten
                 ? "Der Computer wurde eingeschaltet."
                 : "Der Computer wurde ausgeschaltet.");
+        }
+
+
+        // New polymorphic wrapper method
+        // This method enables polymorphism without removing the old Schalten(bool) logic.
+        // It toggles the state and provides a base output.
+        public virtual void Schalten()
+        {
+            Schalten(!Zustand);
+            Console.WriteLine("...Computer...");
         }
 
         /* =========================

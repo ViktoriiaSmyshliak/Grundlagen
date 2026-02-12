@@ -332,15 +332,84 @@ public static class AppRunner
         );
 
         var list = new List<IPrintable>
-    {
-        haus,
-        villa,
-        laden,
-        restaurant,
-        buero
-    };
+        {
+            haus,
+            villa,
+            laden,
+            restaurant,
+            buero
+        };
 
         PrintHelper.PrintAll(list);
     }
 
+    // Demonstrates polymorphism vs method hiding using direct calls and base-type array calls
+    // Shows difference between override (runtime dispatch) and new (compile-time binding)
+    public static void RunPolymorphism()
+    {
+        Console.WriteLine("===== DIRECT CALLS =====");
+
+        Computer computer = new Computer();
+        Desktop desktop = new Desktop();
+        Notebook notebook = new Notebook();
+        Server server = new Server();
+
+        computer.Schalten();
+        desktop.Schalten();
+        notebook.Schalten();
+        server.Schalten();
+
+        Console.WriteLine();
+        Console.WriteLine("===== ARRAY CALLS (Computer reference) =====");
+
+        Computer[] computers =
+        {
+            computer,
+            desktop,
+            notebook,
+            server
+        };
+
+        foreach (Computer currentComputer in computers)
+        {
+            Console.WriteLine($"Type in array: {currentComputer.GetType().Name}");
+            currentComputer.Schalten();
+            Console.WriteLine();
+        }
+    }
+
+    // ================= INTERFACES ===================
+    // Schnittstellen Aufgabe: IRabatt definieren und implementieren,
+    // nur rabattfaehige Artikel in Rabattliste speichern und anzeigen
+    // Interface task: define and implement IRabatt,
+    // store and display only discount-capable products in Rabattliste
+    // -------------------------------------------------
+    public static void RunRabattliste()
+    {
+        // Base setup objects from task description
+        CatalogDesktop desktop = new("Dell", "OptiPlex 790", "C-DT001", 200.00);
+        CatalogNotebook notebook = new("Acer", "Aspire 1", "C-NB001", 220.00);
+        CatalogServer server = new("HP", "Z2 Mini G3", "C-SV001", 1200.00);
+        Schreibtisch schreibtisch = new("Varidesk", "Pro+ 48", "M-ST001", 440.00);
+        Buerostuhl buerostuhl = new("Merax", "Chefsessel", "M-BS001", 180.00);
+
+        // Assign discount values (10% - 30% as required by task)
+        desktop.NeuerRabatt(15);
+        server.NeuerRabatt(20);
+        buerostuhl.NeuerRabatt(25);
+
+
+        // Create discount catalog
+        Rabattliste rabattliste = new();
+
+        // Add only discount-capable articles (Desktop, Server, Office Chair)
+        rabattliste.Hinzufuegen(desktop);
+        rabattliste.Hinzufuegen(server);
+        rabattliste.Hinzufuegen(buerostuhl);
+
+        // Output discount catalog entries
+        rabattliste.Anzeigen();
+    }
+
 }
+

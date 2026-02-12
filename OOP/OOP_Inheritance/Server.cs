@@ -19,4 +19,6 @@ public sealed class Server : Desktop
     public Server()
     {
     }
+
+    // Cannot override Schalten() because Desktop sealed it.
 }

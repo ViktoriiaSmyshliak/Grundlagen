@@ -10,7 +10,7 @@
 // Computer Grundlagen: Felder, Eigenschaften, Validierung, Defaultwerte
 // Computer basics: fields, properties, validation, default values
 // -------------------------------------------------------
-//AppRunner.RunComputerBasics();
+AppRunner.RunComputerBasics();
 
 
 
@@ -87,7 +87,7 @@
 // Structure task: value type data storage,
 // constructor overloading, formatted console output
 // -------------------------------------------------------
-AppRunner.RunTypenschild();
+//AppRunner.RunTypenschild();
 
 
 // ================= STRUCT + PROPERTY COPY ===========================
@@ -120,4 +120,23 @@ AppRunner.RunTypenschild();
 // Type checking & casting task: is / as / pattern matching,
 // safe casting, accessing subclass members
 // -------------------------------------------------------
-AppRunner.RunTypPruefung();
+//AppRunner.RunTypPruefung();
+
+
+// ================= POLYMORPHISM ===================
+// Polymorphie Aufgabe: Vererbung, override vs new,
+// dynamischer Methodenaufruf über Basisklassen-Referenzen
+// Polymorphism task: inheritance, override vs new,
+// runtime dispatch via base class references
+// -------------------------------------------------
+//AppRunner.RunPolymorphism();
+
+
+
+// ================= INTERFACES ===================
+// Schnittstellen Aufgabe: IRabatt, selektive Implementierung,
+// Rabattfaehige Artikel filtern und im Katalog speichern
+// Interface task: IRabatt, selective implementation,
+// filtering discount-capable products and storing in catalog
+// -------------------------------------------------
+//AppRunner.RunRabattliste();
