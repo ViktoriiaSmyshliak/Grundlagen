@@ -386,29 +386,55 @@ public static class AppRunner
     // -------------------------------------------------
     public static void RunRabattliste()
     {
-        // Base setup objects from task description
-        CatalogDesktop desktop = new("Dell", "OptiPlex 790", "C-DT001", 200.00);
-        CatalogNotebook notebook = new("Acer", "Aspire 1", "C-NB001", 220.00);
-        CatalogServer server = new("HP", "Z2 Mini G3", "C-SV001", 1200.00);
-        Schreibtisch schreibtisch = new("Varidesk", "Pro+ 48", "M-ST001", 440.00);
-        Buerostuhl buerostuhl = new("Merax", "Chefsessel", "M-BS001", 180.00);
+        // Catalog objects
+    CatalogDesktop desktop = new("Dell", "OptiPlex 790", "C-DT001", 200.00);
+    CatalogServer server = new("HP", "Z2 Mini G3", "C-SV001", 1200.00);
+    Buerostuhl buerostuhl = new("Merax", "Chefsessel", "M-BS001", 180.00);
 
-        // Assign discount values (10% - 30% as required by task)
-        desktop.NeuerRabatt(15);
-        server.NeuerRabatt(20);
-        buerostuhl.NeuerRabatt(25);
+    // Assign discount values
+    desktop.NeuerRabatt(15);
+    server.NeuerRabatt(20);
+    buerostuhl.NeuerRabatt(25);
 
+    // Assign discount period (extended interface usage)
+    buerostuhl.RabattVon = DateTime.Today;
+    buerostuhl.RabattBis = DateTime.Today.AddDays(30);
 
-        // Create discount catalog
-        Rabattliste rabattliste = new();
+    // Create discount list (works via IRabatt interface)
+    Rabattliste rabattliste = new();
 
-        // Add only discount-capable articles (Desktop, Server, Office Chair)
-        rabattliste.Hinzufuegen(desktop);
-        rabattliste.Hinzufuegen(server);
-        rabattliste.Hinzufuegen(buerostuhl);
+    rabattliste.Hinzufuegen(desktop);
+    rabattliste.Hinzufuegen(server);
+    rabattliste.Hinzufuegen(buerostuhl);
 
-        // Output discount catalog entries
-        rabattliste.Anzeigen();
+    // Output standard discount catalog
+    Console.WriteLine("=== Rabattliste ===");
+    rabattliste.Anzeigen();
+
+    // Check extended interface availability
+    Console.WriteLine();
+    Console.WriteLine("=== IRabattVonBis Check ===");
+
+    if (buerostuhl is IRabattVonBis extended)
+    {
+        Console.WriteLine($"Discount from: {extended.RabattVon:d}");
+        Console.WriteLine($"Discount until: {extended.RabattBis:d}");
+    }
+
+    // Interface polymorphism test
+    Console.WriteLine();
+    Console.WriteLine("=== Interface Test ===");
+
+    IRabatt test = buerostuhl;
+    Console.WriteLine($"Discount: {test.Rabatt}%");
+
+    if (test is IRabattVonBis ext)
+    {
+        Console.WriteLine($"From: {ext.RabattVon:d}");
+        Console.WriteLine($"Until: {ext.RabattBis:d}");
+    }
+
+    Console.ReadKey();
     }
 
 }

@@ -10,7 +10,7 @@
 // Computer Grundlagen: Felder, Eigenschaften, Validierung, Defaultwerte
 // Computer basics: fields, properties, validation, default values
 // -------------------------------------------------------
-AppRunner.RunComputerBasics();
+//AppRunner.RunComputerBasics();
 
 
 
@@ -139,4 +139,4 @@ AppRunner.RunComputerBasics();
 // Interface task: IRabatt, selective implementation,
 // filtering discount-capable products and storing in catalog
 // -------------------------------------------------
-//AppRunner.RunRabattliste();
+AppRunner.RunRabattliste();
