@@ -8,8 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Array\**" />
+    <Compile Remove="ET\**" />
     <Compile Remove="OOP\**" />
+    <EmbeddedResource Remove="Array\**" />
+    <EmbeddedResource Remove="ET\**" />
     <EmbeddedResource Remove="OOP\**" />
+    <None Remove="Array\**" />
+    <None Remove="ET\**" />
     <None Remove="OOP\**" />
   </ItemGroup>
 

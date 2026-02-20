@@ -12,7 +12,13 @@
 // Delegates: Methoden als Parameter, direkte Übergabe, anonyme Methoden, Lambdas
 // -------------------------------------------------------
 //AppRunner.RunDelegates();
+AppRunner.RunAccountTest();
 
+// ================= EVENTS – OBJECT EVENT HANDLING ==================
+// Events: event declaration, subscription, triggering, and unsubscription
+// Events: Ereignisse deklarieren, abonnieren, auslösen und abmelden
+// -------------------------------------------------------
+//AppRunner.RunEventsGenerator();
 
 // ================= EVENTS – OBJECT EVENT HANDLING ==================
 // Events: event declaration, subscription, triggering, and unsubscription
@@ -25,4 +31,4 @@
 // Generics: generic classes, constraints, generic methods, delegates
 // Generics: generische Klassen, Constraints, generische Methoden, Delegates
 // -------------------------------------------------------
-AppRunner.RunGenerics();
+//AppRunner.RunGenerics();

@@ -103,14 +103,14 @@
                 Console.WriteLine($" => {gen.Name} hat die gerade Zufallszahl {e.Zahl} erzeugt.");
             };
 
-            // generator3 (float) reacts only to Groesser50
+            // generator3 (double) reacts only to Groesser50
             generator3.Groesser50 += (sender, e) =>
             {
                 var gen = sender as Zufallszahlengenerator;
                 Console.WriteLine($" => {gen.Name} hat die Gleitkommazahl {e.Gleitkommazahl:F2} erzeugt, die größer ist als 0.5.");
             };
 
-            // generator4 (float) reacts only to Gerade
+            // generator4 (double) reacts only to Gerade
             generator4.Gerade += (sender, e) =>
             {
                 var gen = sender as Zufallszahlengenerator;
@@ -209,6 +209,25 @@
         private static string FormatValue(int value)
         {
             return $"Value: {value}";
+        }
+
+
+
+
+        // TEST
+        public static void RunAccountTest()
+        {
+            // Create a bank account
+            Account account = new Account(200);
+
+            // Add a reference to the PrintSimpleMessage method to the delegate
+            account.RegisterHandler(PrintSimpleMessage);
+
+            // Attempt to withdraw money twice in a row
+            account.Take(100);
+            account.Take(150);
+
+            static void PrintSimpleMessage(string message) => Console.WriteLine(message);
         }
     }
 }

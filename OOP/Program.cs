@@ -18,7 +18,7 @@
 // Computer Methoden: HDD formatieren, Netzteil ändern, Zustand schalten
 // Computer methods: formatting HDD, power change, switching state
 // -------------------------------------------------------
-//AppRunner.RunComputerMethoden();
+AppRunner.RunComputerMethoden();
 
 
 
@@ -60,7 +60,7 @@
 // Hardwarekonfigurationen über überladene Konstruktoren erstellen
 // Constructors task: create Computer objects with different hardware configurations via overloaded constructors
 // -------------------------------------------------------
-//AppRunner.RunComputerKonstruktoren();
+AppRunner.RunComputerKonstruktoren();
 
 
 
