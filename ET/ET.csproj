@@ -12,4 +12,8 @@
 		<Compile Remove="..\OOP\**\*.cs" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Ordner\Unterordner\" />
+	</ItemGroup>
+
 </Project>

@@ -18,7 +18,7 @@
 // Computer Methoden: HDD formatieren, Netzteil ändern, Zustand schalten
 // Computer methods: formatting HDD, power change, switching state
 // -------------------------------------------------------
-AppRunner.RunComputerMethoden();
+//AppRunner.RunComputerMethoden();
 
 
 
@@ -60,7 +60,7 @@ AppRunner.RunComputerMethoden();
 // Hardwarekonfigurationen über überladene Konstruktoren erstellen
 // Constructors task: create Computer objects with different hardware configurations via overloaded constructors
 // -------------------------------------------------------
-AppRunner.RunComputerKonstruktoren();
+//AppRunner.RunComputerKonstruktoren();
 
 
 
@@ -111,7 +111,7 @@ AppRunner.RunComputerKonstruktoren();
 // Real estate task: inheritance hierarchy for building types,
 // constructor chaining, polymorphic output via interface
 // ----------------------------------------------------
-//AppRunner.RunMakler();
+AppRunner.RunMakler();
 
 
 // ================= TYPE CHECK & CAST ===================
@@ -139,4 +139,4 @@ AppRunner.RunComputerKonstruktoren();
 // Interface task: IRabatt, selective implementation,
 // filtering discount-capable products and storing in catalog
 // -------------------------------------------------
-AppRunner.RunRabattliste();
+//AppRunner.RunRabattliste();
